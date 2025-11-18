@@ -1,0 +1,148 @@
+[
+  {
+    "id": "E001",
+    "title": "Epic 1 - Loan Application Portal",
+    "description": "Develop a customer-facing portal to allow applicants to submit loan requests, upload documents, and track application status.",
+    "relatedPRDSection": "High-Level Deliverables: 1. Loan Application Portal (Customer-facing)",
+    "userStories": [
+      {
+        "id": "US001",
+        "title": "User Story 1 - Loan Application Form",
+        "description": "As a customer, I want to complete and submit a loan application form online so that I can apply for a loan without visiting the bank.",
+        "relatedPRDSection": "Project Scope: Web-based Loan Application Portal for customers",
+        "tasks": [
+          {
+            "id": "T001",
+            "title": "Task 1 - Design Loan Application Form UI & Submission Logic",
+            "description": "Create responsive and accessible web forms for personal and home loans, including basic validation and mock submission logic.",
+            "acceptance_criteria": [
+              "Form fields align with loan requirements.",
+              "Validation is applied to all mandatory fields.",
+              "Supports both personal and home loan types (mock selection).",
+              "Confirmation message displayed upon successful submission."
+            ],
+            "type": "loan-application-form"
+          }
+        ]
+      },
+      {
+        "id": "US002",
+        "title": "User Story 2 - Application Status Tracking",
+        "description": "As a customer, I want to track my loan application status so that I stay informed throughout the process.",
+        "relatedPRDSection": "High-Level Deliverables: 1. Loan Application Portal (Customer-facing)",
+        "tasks": [
+          {
+            "id": "T002",
+            "title": "Task 1 - Build Status Tracker Component",
+            "description": "Create UI component to display real-time application progress, dynamically updating via mock backend API.",
+            "acceptance_criteria": [
+              "Displays status: Submitted, Under Review, Approved, or Rejected.",
+              "Updates dynamically via mock backend API."
+            ],
+            "type": "status-tracker"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "E002",
+    "title": "Epic 2 - Automated Document Verification",
+    "description": "Automate document verification using OCR to reduce manual processing time and improve accuracy.",
+    "relatedPRDSection": "High-Level Deliverables: 3. Automated Document Verification Service",
+    "userStories": [
+      {
+        "id": "US003",
+        "title": "User Story 1 - Document Upload & OCR Processing",
+        "description": "As a user, I want the system to automatically verify my uploaded documents so that I don't have to manually validate them.",
+        "relatedPRDSection": "Project Scope: Integration with: Document OCR service",
+        "tasks": [
+          {
+            "id": "T003",
+            "title": "Task 1 - Integrate OCR API & Handle Failures",
+            "description": "Develop a component for uploading documents, simulating OCR processing, and handling verification failures with mock notifications.",
+            "acceptance_criteria": [
+              "OCR API successfully extracts text from uploaded documents (mock).",
+              "Verification status returned and stored in system (mock).",
+              "System flags failed verifications for manual review (mock).",
+              "Users receive notification for re-upload if required (mock)."
+            ],
+            "type": "document-upload-ocr"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "E003",
+    "title": "Epic 3 - Credit Check Integration",
+    "description": "Connect with external credit bureaus to assess applicant creditworthiness automatically.",
+    "relatedPRDSection": "High-Level Deliverables: 4. Credit Check Integration Module",
+    "userStories": [
+      {
+        "id": "US004",
+        "title": "User Story 1 - Credit Bureau Integration & Display",
+        "description": "As a loan officer, I want the system to automatically fetch credit scores from the Credit Bureau API and display them in the dashboard so that I can make informed approval decisions.",
+        "relatedPRDSection": "Project Scope: Integration with: Credit Bureau API",
+        "tasks": [
+          {
+            "id": "T004",
+            "title": "Task 1 - Implement Credit Bureau API Integration & Display",
+            "description": "Simulate fetching credit scores from a Credit Bureau API and display the mock data within an application detail view.",
+            "acceptance_criteria": [
+              "Credit score fetched successfully for each applicant (mock).",
+              "API error handling implemented for unavailability (mock).",
+              "Credit score visible in application details view (mock).",
+              "System logs each API request for compliance (mock message)."
+            ],
+            "type": "credit-check-display"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "E004",
+    "title": "Epic 4 - Notifications and Reporting",
+    "description": "Develop automated notifications and reporting capabilities for both customers and administrators.",
+    "relatedPRDSection": "High-Level Deliverables: 5. Notification & Reporting System",
+    "userStories": [
+      {
+        "id": "US005",
+        "title": "User Story 1 - Notification System",
+        "description": "As a user, I want to receive automated notifications about my loan status so that I stay updated without manual follow-ups.",
+        "relatedPRDSection": "Project Scope: Automated Notifications and Reminders via email and SMS",
+        "tasks": [
+          {
+            "id": "T005",
+            "title": "Task 1 - Integrate Email & SMS Services",
+            "description": "Implement a mock UI to simulate sending email and SMS notifications when a loan status changes.",
+            "acceptance_criteria": [
+              "Notifications sent when loan status changes (mock trigger).",
+              "SMS and email templates are customizable (mock content display)."
+            ],
+            "type": "notification-sender"
+          }
+        ]
+      },
+      {
+        "id": "US006",
+        "title": "User Story 2 - Reporting Dashboard",
+        "description": "As an administrator, I want a reporting dashboard to analyze loan application trends and system performance.",
+        "relatedPRDSection": "Project Scope: Basic Reporting and Analytics dashboard",
+        "tasks": [
+          {
+            "id": "T006",
+            "title": "Task 1 - Build Reporting Dashboard UI",
+            "description": "Create an analytics dashboard with mock charts and KPIs (total applications, approvals, rejections).",
+            "acceptance_criteria": [
+              "Displays total applications, approvals, and rejections.",
+              "Reports exportable as PDF or CSV (mock button/message)."
+            ],
+            "type": "reporting-dashboard"
+          }
+        ]
+      }
+    ]
+  }
+]
