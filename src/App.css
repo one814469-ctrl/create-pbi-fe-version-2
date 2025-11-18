@@ -1,0 +1,259 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.card {
+  padding: 2em;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  background-color: #2a2a2a;
+  text-align: left;
+}
+
+.epic-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.user-story-block {
+  width: 100%;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: #333;
+}
+
+.task-feature {
+  border: 1px dashed #666;
+  border-radius: 4px;
+  padding: 0.8em;
+  margin-top: 1em;
+  background-color: #444;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+  background-color: #444;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.nav-link:hover {
+  background-color: #555;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #444;
+  margin-bottom: 2rem;
+}
+
+.main-content {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  padding-right: 1rem;
+  border-right: 1px solid #444;
+}
+
+.content {
+  flex-grow: 1;
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="file"],
+textarea {
+  padding: 0.8em;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9em;
+  margin-top: -0.5em;
+  margin-bottom: 0.5em;
+}
+
+.success-message {
+  color: #6bff6b;
+  font-size: 0.9em;
+  margin-top: -0.5em;
+  margin-bottom: 0.5em;
+}
+
+.highlight-error {
+  border-color: #ff6b6b !important;
+}
+
+.notification-item {
+  background-color: #4a4a4a;
+  padding: 0.8em;
+  margin-bottom: 0.5em;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #555;
+  margin-right: 10px;
+}
+
+.status-dot.active {
+  background-color: #646cff;
+}
+
+.status-dot.completed {
+  background-color: #6bff6b;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+.table th, .table td {
+  border: 1px solid #555;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #333;
+}
+
+.chart-mock {
+  background-color: #555;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  border-radius: 4px;
+  margin-top: 1em;
+}
