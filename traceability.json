@@ -1,0 +1,204 @@
+{
+  "epic-1---loan-application-portal": {
+    "epicId": "E001",
+    "title": "Epic 1 - Loan Application Portal",
+    "description": "Develop a customer-facing portal to allow applicants to submit loan requests, upload documents, and track application status.",
+    "relatedPRDSection": "High-Level Deliverables: 1. Loan Application Portal (Customer-facing)",
+    "file": "src/components/EpicPage/EpicPage.jsx (renders Epic: E001)",
+    "route": "/epic/epic-1---loan-application-portal",
+    "userStories": {
+      "US001": {
+        "title": "User Story 1 - Loan Application Form",
+        "description": "As a customer, I want to complete and submit a loan application form online so that I can apply for a loan without visiting the bank.",
+        "relatedPRDSection": "Project Scope: Web-based Loan Application Portal for customers",
+        "file": "src/components/EpicPage/UserStoryBlock.jsx (renders Story: US001)",
+        "tasks": {
+          "T001": {
+            "title": "Task 1 - Design Loan Application Form UI & Submission Logic",
+            "description": "Create responsive and accessible web forms for personal and home loans, including basic validation and mock submission logic.",
+            "component": "src/components/task-implementations/LoanApplicationFormTask.jsx",
+            "acceptanceCriteria": [
+              {
+                "criterion": "Form fields align with loan requirements.",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "Validation is applied to all mandatory fields.",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "Supports both personal and home loan types (mock selection).",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "Confirmation message displayed upon successful submission.",
+                "status": "Mocked/Simulated in UI"
+              }
+            ]
+          }
+        }
+      },
+      "US002": {
+        "title": "User Story 2 - Application Status Tracking",
+        "description": "As a customer, I want to track my loan application status so that I stay informed throughout the process.",
+        "relatedPRDSection": "High-Level Deliverables: 1. Loan Application Portal (Customer-facing)",
+        "file": "src/components/EpicPage/UserStoryBlock.jsx (renders Story: US002)",
+        "tasks": {
+          "T002": {
+            "title": "Task 1 - Build Status Tracker Component",
+            "description": "Create UI component to display real-time application progress, dynamically updating via mock backend API.",
+            "component": "src/components/task-implementations/ApplicationStatusTrackerTask.jsx",
+            "acceptanceCriteria": [
+              {
+                "criterion": "Displays status: Submitted, Under Review, Approved, or Rejected.",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "Updates dynamically via mock backend API.",
+                "status": "Mocked/Simulated in UI"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "epic-2---automated-document-verification": {
+    "epicId": "E002",
+    "title": "Epic 2 - Automated Document Verification",
+    "description": "Automate document verification using OCR to reduce manual processing time and improve accuracy.",
+    "relatedPRDSection": "High-Level Deliverables: 3. Automated Document Verification Service",
+    "file": "src/components/EpicPage/EpicPage.jsx (renders Epic: E002)",
+    "route": "/epic/epic-2---automated-document-verification",
+    "userStories": {
+      "US003": {
+        "title": "User Story 1 - Document Upload & OCR Processing",
+        "description": "As a user, I want the system to automatically verify my uploaded documents so that I don't have to manually validate them.",
+        "relatedPRDSection": "Project Scope: Integration with: Document OCR service",
+        "file": "src/components/EpicPage/UserStoryBlock.jsx (renders Story: US003)",
+        "tasks": {
+          "T003": {
+            "title": "Task 1 - Integrate OCR API & Handle Failures",
+            "description": "Develop a component for uploading documents, simulating OCR processing, and handling verification failures with mock notifications.",
+            "component": "src/components/task-implementations/DocumentUploadOcrTask.jsx",
+            "acceptanceCriteria": [
+              {
+                "criterion": "OCR API successfully extracts text from uploaded documents (mock).",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "Verification status returned and stored in system (mock).",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "System flags failed verifications for manual review (mock).",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "Users receive notification for re-upload if required (mock).",
+                "status": "Mocked/Simulated in UI"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "epic-3---credit-check-integration": {
+    "epicId": "E003",
+    "title": "Epic 3 - Credit Check Integration",
+    "description": "Connect with external credit bureaus to assess applicant creditworthiness automatically.",
+    "relatedPRDSection": "High-Level Deliverables: 4. Credit Check Integration Module",
+    "file": "src/components/EpicPage/EpicPage.jsx (renders Epic: E003)",
+    "route": "/epic/epic-3---credit-check-integration",
+    "userStories": {
+      "US004": {
+        "title": "User Story 1 - Credit Bureau Integration & Display",
+        "description": "As a loan officer, I want the system to automatically fetch credit scores from the Credit Bureau API and display them in the dashboard so that I can make informed approval decisions.",
+        "relatedPRDSection": "Project Scope: Integration with: Credit Bureau API",
+        "file": "src/components/EpicPage/UserStoryBlock.jsx (renders Story: US004)",
+        "tasks": {
+          "T004": {
+            "title": "Task 1 - Implement Credit Bureau API Integration & Display",
+            "description": "Simulate fetching credit scores from a Credit Bureau API and display the mock data within an application detail view.",
+            "component": "src/components/task-implementations/CreditCheckApiDisplayTask.jsx",
+            "acceptanceCriteria": [
+              {
+                "criterion": "Credit score fetched successfully for each applicant (mock).",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "API error handling implemented for unavailability (mock).",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "Credit score visible in application details view (mock).",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "System logs each API request for compliance (mock message).",
+                "status": "Mocked/Simulated in UI"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "epic-4---notifications-and-reporting": {
+    "epicId": "E004",
+    "title": "Epic 4 - Notifications and Reporting",
+    "description": "Develop automated notifications and reporting capabilities for both customers and administrators.",
+    "relatedPRDSection": "High-Level Deliverables: 5. Notification & Reporting System",
+    "file": "src/components/EpicPage/EpicPage.jsx (renders Epic: E004)",
+    "route": "/epic/epic-4---notifications-and-reporting",
+    "userStories": {
+      "US005": {
+        "title": "User Story 1 - Notification System",
+        "description": "As a user, I want to receive automated notifications about my loan status so that I stay updated without manual follow-ups.",
+        "relatedPRDSection": "Project Scope: Automated Notifications and Reminders via email and SMS",
+        "file": "src/components/EpicPage/UserStoryBlock.jsx (renders Story: US005)",
+        "tasks": {
+          "T005": {
+            "title": "Task 1 - Integrate Email & SMS Services",
+            "description": "Implement a mock UI to simulate sending email and SMS notifications when a loan status changes.",
+            "component": "src/components/task-implementations/NotificationSenderTask.jsx",
+            "acceptanceCriteria": [
+              {
+                "criterion": "Notifications sent when loan status changes (mock trigger).",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "SMS and email templates are customizable (mock content display).",
+                "status": "Mocked/Simulated in UI"
+              }
+            ]
+          }
+        }
+      },
+      "US006": {
+        "title": "User Story 2 - Reporting Dashboard",
+        "description": "As an administrator, I want a reporting dashboard to analyze loan application trends and system performance.",
+        "relatedPRDSection": "Project Scope: Basic Reporting and Analytics dashboard",
+        "file": "src/components/EpicPage/UserStoryBlock.jsx (renders Story: US006)",
+        "tasks": {
+          "T006": {
+            "title": "Task 1 - Build Reporting Dashboard UI",
+            "description": "Create an analytics dashboard with mock charts and KPIs (total applications, approvals, rejections).",
+            "component": "src/components/task-implementations/ReportingDashboardTask.jsx",
+            "acceptanceCriteria": [
+              {
+                "criterion": "Displays total applications, approvals, and rejections.",
+                "status": "Mocked/Simulated in UI"
+              },
+              {
+                "criterion": "Reports exportable as PDF or CSV (mock button/message).",
+                "status": "Mocked/Simulated in UI"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
