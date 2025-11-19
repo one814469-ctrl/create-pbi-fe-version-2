@@ -1,0 +1,50 @@
+.notification {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius);
+  box-shadow: var(--elevation-soft);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notification-info {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.notification-success {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+}
+
+.notification-warning {
+  background-color: var(--color-gold);
+  color: var(--color-ink);
+}
+
+.notification-error {
+  background-color: #e53e3e; /* Red */
+  color: var(--color-surface);
+}
+
+.notification-close-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: var(--font-size-h4);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
