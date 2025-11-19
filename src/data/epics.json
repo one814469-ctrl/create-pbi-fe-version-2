@@ -1,0 +1,269 @@
+[
+  {
+    "title": "Loan Application Portal",
+    "description": "Customer-facing portal to facilitate digital loan applications and document submission.",
+    "userStories": [
+      {
+        "title": "Account Authentication & Access",
+        "description": "Secure authentication and account management for loan applicants.",
+        "tasks": [
+          {
+            "title": "User login via FinTrust SSO",
+            "description": "Enable customers to log in using FinTrust Bank's Single Sign-On system.",
+            "acceptance_criteria": [
+              "Given I am a registered FinTrust customer\nWhen I navigate to the loan portal login page\nThen I am prompted to authenticate via SSO and redirected to my dashboard upon success",
+              "[Negative] Given I enter incorrect credentials\nWhen I attempt to log in\nThen I see an authentication error message and stay on the login page",
+              "[Edge] Given a session times out after inactivity\nWhen I try to access any protected page\nThen I am prompted to log in again via SSO"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Loan Application Submission",
+        "description": "Customers can complete and submit loan applications.",
+        "tasks": [
+          {
+            "title": "Submit personal loan application",
+            "description": "As an applicant, I want to complete a personal loan application form so that I can request a loan digitally.",
+            "acceptance_criteria": [
+              "Given I am logged in\nWhen I fill all required fields for personal loan and submit\nThen my application is saved and I receive a confirmation notification",
+              "[Edge] Given I submit an incomplete form\nWhen I attempt to submit\nThen required fields are highlighted and submission is blocked",
+              "[Negative] Given I am not authenticated\nWhen I try to submit an application\nThen I am redirected to login"
+            ]
+          },
+          {
+            "title": "Upload identity and income documents",
+            "description": "As an applicant, I want to upload required documents so that the bank can verify my identity and income.",
+            "acceptance_criteria": [
+              "Given my application requires document uploads\nWhen I select and upload valid files\nThen each file is successfully attached to my application",
+              "[Edge] Given I upload a file that exceeds size limits\nWhen I attempt to upload\nThen I see an error and the file is rejected",
+              "[Negative] Given I upload a file with an unsupported format\nWhen I attempt upload\nThen I receive a format error and the upload is blocked"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Application Status Tracking",
+        "description": "Enable applicants to view the status and history of their loan applications.",
+        "tasks": [
+          {
+            "title": "View loan application status",
+            "description": "As an applicant, I want to see the real-time status of my loan application so that I can track its progress.",
+            "acceptance_criteria": [
+              "Given I am logged in and have an active loan application\nWhen I go to the Application Status page\nThen I see the current status and timeline of my application",
+              "[Edge] Given I have no submitted applications\nWhen I visit the Application Status page\nThen I see an empty-state card and a prompt to start a new application",
+              "[Negative] Given I access the status page without authentication\nWhen I request application status\nThen I am redirected to login"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Automated Document Verification",
+    "description": "Automate the verification of identification and income documents using OCR technology.",
+    "userStories": [
+      {
+        "title": "OCR Document Processing",
+        "description": "Integrate OCR service for extracting data from uploaded documents.",
+        "tasks": [
+          {
+            "title": "Automatic extraction of data from documents",
+            "description": "As a system, I want to extract name, ID number, and income details from uploaded documents using OCR so that verification is automated.",
+            "acceptance_criteria": [
+              "Given a document is uploaded\nWhen OCR processes the document\nThen the extracted fields are auto-populated in the application record",
+              "[Edge] Given OCR returns low confidence on extracted data\nWhen verification is attempted\nThen the applicant is prompted to manually review/correct fields",
+              "[Negative] Given OCR service is unavailable\nWhen a document is uploaded\nThen manual data entry and verification are triggered"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Document Verification Results",
+        "description": "Show results of automated document verification to reviewers and applicants.",
+        "tasks": [
+          {
+            "title": "Notify applicant of document verification status",
+            "description": "As an applicant, I want to be informed if my documents are verified or need correction so that I can respond promptly.",
+            "acceptance_criteria": [
+              "Given my documents have been processed\nWhen verification is completed\nThen I receive a notification with pass/fail result and next steps",
+              "[Edge] Given document verification fails\nWhen I view my application\nThen I see specific reasons and a prompt to re-upload or correct information"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Credit Check & Scoring Integration",
+    "description": "Automate credit checks via Credit Bureau API and generate applicant credit score.",
+    "userStories": [
+      {
+        "title": "Credit Bureau API Integration",
+        "description": "Connect to Credit Bureau and process applicant credit information.",
+        "tasks": [
+          {
+            "title": "Initiate automated credit check",
+            "description": "As a system, I want to initiate a credit check for applications so that loan eligibility can be assessed quickly.",
+            "acceptance_criteria": [
+              "Given all required applicant data is present\nWhen I submit an application for credit review\nThen the credit bureau API returns a score and report",
+              "[Edge] Given the API times out or is unavailable\nWhen a credit check is requested\nThen a manual review workflow is initiated and flagged for loan officer",
+              "[Negative] Given invalid applicant data\nWhen a credit check is initiated\nThen I receive a validation error and the check is not processed"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Display Credit Score to Loan Officers",
+        "description": "Show applicant credit score and details in the management dashboard.",
+        "tasks": [
+          {
+            "title": "Loan officer views applicant credit score",
+            "description": "As a loan officer, I want to see credit score and report directly in the dashboard so that I can inform approval decisions.",
+            "acceptance_criteria": [
+              "Given an application with completed credit check\nWhen I open the applicant file on dashboard\nThen credit score and summary report are displayed",
+              "[Edge] Given credit score is below the minimum threshold\nWhen I view the report\nThen the application is flagged for rejection and annotated"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Approval Workflow Automation",
+    "description": "Automate the loan approval or rejection workflow for speed and compliance.",
+    "userStories": [
+      {
+        "title": "Automated Decision Engine",
+        "description": "Apply business logic and compliance checks to trigger automated approvals or escalations.",
+        "tasks": [
+          {
+            "title": "Automatic loan approval/rejection based on criteria",
+            "description": "As a system, I want loan applications auto-approved or rejected using set business rules so that outcomes are consistent and timely.",
+            "acceptance_criteria": [
+              "Given an application meets all automated criteria\nWhen it is processed by the engine\nThen it is auto-approved and applicant notified",
+              "[Edge] Given an application is flagged for manual review due to exceptions\nWhen processing occurs\nThen it is routed to a loan officer for review and logged",
+              "[Negative] Given a rejected application\nWhen the applicant views their status\nThen clear rejection reasons and appeal instructions are shown"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Compliance Check Integration",
+        "description": "Ensure regulatory checks are performed before final approval.",
+        "tasks": [
+          {
+            "title": "Automated compliance validation",
+            "description": "As a system, I want to check loan applications against regulatory rules so that approvals remain compliant.",
+            "acceptance_criteria": [
+              "Given a loan application is ready for approval\nWhen compliance rules are applied\nThen approval only proceeds if application is compliant",
+              "[Edge] Given a compliance rule is updated\nWhen new applications are processed\nThen the system applies the new rule and logs the change"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Internal Loan Management Dashboard",
+    "description": "Employee-facing dashboard to manage and track loan application workflows.",
+    "userStories": [
+      {
+        "title": "Loan Application Search & Filters",
+        "description": "Enable employees to search and filter loan applications efficiently.",
+        "tasks": [
+          {
+            "title": "Search loan applications by customer name or ID",
+            "description": "As a loan officer, I want to search and filter applications so that I can quickly find relevant cases.",
+            "acceptance_criteria": [
+              "Given multiple applications in system\nWhen I enter a name or ID and submit a search\nThen only matching applications are listed",
+              "[Edge] Given no search results\nWhen I search for a non-existent name\nThen I see 'No applications found' message"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Application Audit Trail",
+        "description": "Track changes and decisions for compliance and transparency.",
+        "tasks": [
+          {
+            "title": "View application history and actions",
+            "description": "As an underwriter, I want to view all changes and approval/rejection events on an application for audit purposes.",
+            "acceptance_criteria": [
+              "Given an existing application\nWhen I open the audit trail tab\nThen all actions, timestamps, and user details are displayed",
+              "[Negative] Given a user without dashboard permissions\nWhen they attempt to access the audit trail\nThen access is denied and an error message shown"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Notifications & Automated Reminders",
+    "description": "Automated email/SMS updates for applicants and internal stakeholders.",
+    "userStories": [
+      {
+        "title": "Customer Application Status Updates",
+        "description": "Send automated notifications for status changes, reminders, and required actions.",
+        "tasks": [
+          {
+            "title": "Applicant receives status update notifications",
+            "description": "As an applicant, I want to receive email/SMS updates for my loan application status so that I'm informed throughout the process.",
+            "acceptance_criteria": [
+              "Given my application status changes\nWhen the change is processed\nThen I receive an email/SMS notification with updated status",
+              "[Edge] Given delivery of notification fails\nWhen a status change occurs\nThen a retry mechanism is triggered and failure logged"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Internal Task Reminders",
+        "description": "Automated reminders for pending tasks sent to loan officers and underwriters.",
+        "tasks": [
+          {
+            "title": "Employee receives reminder for pending tasks",
+            "description": "As a loan officer, I want automated reminders about pending reviews so that I complete them within the SLA.",
+            "acceptance_criteria": [
+              "Given I have pending applications assigned\nWhen a reminder is due\\nThen I receive an email/SMS notification of pending tasks",
+              "[Edge] Given reminders are sent when no open tasks exist\\nWhen the reminder is triggered\\nThen no notification is sent"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Reporting & Analytics",
+    "description": "Dashboard for monitoring application volume, outcomes, and customer feedback.",
+    "userStories": [
+      {
+        "title": "Application Volume & Turnaround Reports",
+        "description": "View and export statistics on loan volume and processing speed.",
+        "tasks": [
+          {
+            "title": "Generate loan application processing report",
+            "description": "As a manager, I want to view and export reports on the number of applications and average turnaround times so that I can monitor operational efficiency.",
+            "acceptance_criteria": [
+              "Given I access the reporting dashboard\nWhen I select a date range and type\nThen I see a report graph and export option",
+              "[Edge] Given no data for selected period\nWhen report is generated\nThen a 'No data found' notice is shown"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Customer Satisfaction Tracking",
+        "description": "Track post-approval customer satisfaction via survey results.",
+        "tasks": [
+          {
+            "title": "View aggregated customer satisfaction metrics",
+            "description": "As a manager, I want to see trends in customer satisfaction surveys so that I can assess and improve service quality.",
+            "acceptance_criteria": [
+              "Given multiple post-loan surveys submitted\nWhen I view CSAT dashboard\nThen metric trends and recent comments are displayed",
+              "[Negative] Given insufficient survey data\nWhen metrics are requested\nThen a warning is displayed indicating low sample size"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
