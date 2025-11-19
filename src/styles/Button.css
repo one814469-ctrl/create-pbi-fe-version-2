@@ -1,0 +1,85 @@
+.button {
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  font-weight: var(--font-weight-medium);
+  min-width: 100px;
+  text-align: center;
+}
+
+.button-primary {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border: 1px solid var(--color-primary);
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: #033c60; /* Darker primary */
+  border-color: #033c60;
+}
+
+.button-secondary {
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border-color: var(--color-primary);
+}
+
+.button-tertiary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+.button-tertiary:hover:not(:disabled) {
+  background-color: var(--color-bg-light);
+  border-color: var(--color-primary);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Dark mode adjustments */
+.dark .button-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-ink);
+}
+
+.dark .button-primary:hover:not(:disabled) {
+  background-color: #3b8a95; /* Darker primary for dark mode */
+  border-color: #3b8a95;
+}
+
+.dark .button-secondary {
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+.dark .button-secondary:hover:not(:disabled) {
+  background-color: var(--color-primary);
+  color: var(--color-ink);
+  border-color: var(--color-primary);
+}
+
+.dark .button-tertiary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+}
+
+.dark .button-tertiary:hover:not(:disabled) {
+  background-color: var(--color-bg-light);
+  border-color: var(--color-primary);
+}
