@@ -25,7 +25,7 @@ const LoginPage = ({ onLogin, isAuthenticated }) => {
         {authStory ? (
           <UserStoryBlock story={authStory} onLogin={onLogin} isAuthenticated={isAuthenticated} />
         ) : (
-          <LoginForm onLogin={onLogin} isAuthenticated={isAuthenticated} task={{acceptance_criteria: ["", "", ""]}} /> {/* Fallback with dummy task for AC */}
+          <LoginForm onLogin={onLogin} isAuthenticated={isAuthenticated} task={{acceptance_criteria: ["", "", ""]}} />
         )}
       </Card>
     </div>
