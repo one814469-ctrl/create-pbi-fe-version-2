@@ -1,0 +1,109 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container.dark {
+  background-color: #1a202c; /* Darker background for dark mode */
+  color: #e2e8f0; /* Lighter text for dark mode */
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex-grow: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: var(--elevation-subtle);
+  margin-bottom: 24px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-container.dark .card {
+  background-color: #2d3748; /* Darker card background */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+.section-header {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-container.dark .section-header {
+  color: #e2e8f0;
+  border-bottom-color: #4a5568;
+}
+
+.user-story-block {
+  margin-bottom: 24px;
+}
+
+.user-story-block h3 {
+  font-size: 18px;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.user-story-block p {
+  font-size: 14px;
+  color: var(--color-muted);
+  margin-bottom: 16px;
+}
+
+.task-feature {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-bg-light);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.app-container.dark .task-feature {
+  background-color: #2f3a4b;
+  border-color: #4a5568;
+}
+
+.task-feature h4 {
+  font-size: 16px;
+  color: var(--color-ink);
+  margin-bottom: 12px;
+}
+
+.app-container.dark .task-feature h4 {
+  color: #e2e8f0;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .page-content {
+    padding: 16px;
+  }
+}
