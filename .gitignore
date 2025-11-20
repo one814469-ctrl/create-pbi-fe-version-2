@@ -1,0 +1,62 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+.report/
+
+# Node.js
+# attention: when installing npm packages, if you are using yarn, you must remove .npm from .gitignore
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.bak
+
+# Environment files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Vite-specific build output
+/dist
+
+# Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Vercel
+.vercel/
+
+# dotenv
+.env*.local
+
+# npm package manager cache
+.npm/
+
+# macOS
+.DS_Store
+
+# thumbdbs
+.thumbnails
+
+# .bin
+.bin/
+
+# Temporary files
+tmp/
